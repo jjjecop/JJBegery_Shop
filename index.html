@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bake.Bake | Home</title>
+  <link rel="stylesheet" href="css/popupcart.css">
+  <link rel="stylesheet" href="css/cart.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- 🔶 Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="logo/3.png" alt="โลโก้ร้าน Cake" class="logo-img" />
+    </div>
+    <div class="content-wrapper">
+      <ul class="menu">
+        <li class="box-menu"><a href="index.html" class="text-menu">HOME</a></li>
+        <li class="box-menu"><a href="menu.html" class="text-menu">MENU</a></li>
+        <li class="box-menu"><a href="about.html" class="text-menu">ABOUT US</a></li>
+        <li class="box-menu"><a href="contact.html" class="text-menu">CONTACT</a></li>
+        <li class="box-menu"><a href="#order" class="text-menu">ORDER ONLINE</a></li>
+      </ul>
+    </div>
+  </nav>
+   <!-- ตะกร้าร้านค้า -->
+  <div class="cart-countainer">
+    <button id="cart-float" title="Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="cart-count">0</span>
+    </button>
+
+  <!-- Cart Panel -->
+  <div id="cart-panel" class="cart-panel">
+      <div class="cart-header">
+        <span class="cart-title">Cart (<span id="cart-item-count">0</span> items)</span>
+        <button id="close-cart" class="close-btn">×</button>
+      <div class="cart-body">
+        <div id="cart-list"></div> <!-- 🔁 แสดงรายการสินค้า -->
+        <div id="cart-total" style="margin-top: 1rem; font-weight: bold;;"></div> <!-- 🔢 ยอดรวม -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 🔶 Main Cake Image -->
+  <div class="content-body content-wrapper">
+    <div class="body-img">
+      <img id="maincake" src="imgcake/cake1.png" class="cake-content" alt="เค้กหลัก" />
+    </div>
+  </div>
+
+ <!-- 🔶 Gallery Slider -->
+<div class="gallery-wrapper content-wrapper">
+  <div id="gallery" class="gallery">
+
+    <div class="gallery-item" style="background-color: #b99760">
+      <img src="imgcake/cake1.png" alt="เค้ก 1" class="cake-img" />
+      <div class="overlay"></div>
+    </div>
+
+    <div class="gallery-item" style="background-color: #F5F1DC">
+      <img src="imgcake/cake3.png" alt="เค้ก 2" class="cake-img" />
+      <div class="overlay"></div>
+    </div>
+
+    <div class="gallery-item" style="background-color: #ddafaa">
+      <img src="imgcake/cake2.png" alt="เค้ก 3" class="cake-img" />
+      <div class="overlay"></div>
+    </div>
+
+    <div class="gallery-item" style="background-color: #C5C9A4">
+      <img src="imgcake/cake4.png" alt="เค้ก 4" class="cake-img" />
+      <div class="overlay"></div>
+    </div>
+
+    <div class="gallery-item" style="background-color: #b99760">
+      <img src="imgcake/cake5.png" alt="เค้ก 5" class="cake-img" />
+      <div class="overlay"></div>
+    </div>
+
+    <div class="gallery-item" style="background-color: #F5F1DC">
+      <img src="imgcake/cake6.png" alt="เค้ก 6" class="cake-img" />
+      <div class="overlay"></div>
+    </div>
+
+  </div>
+  <section class="menus">
+    <div class="menu-card">
+      <img src="menu/like.png" class="menu-img" alt="ไอคอน">
+      <h3 class="menu-title">LIKE & FOLLOW</h3>
+      <p class="menu-desc">Lorem ipsum, dolor sit amet consectet ssimus!</p>
+    </div>
+
+    <div  class="menu-card">
+      <img src="menu/menu.png" class="menu-img" alt="ไอคอน">
+      <h3 class="menu-title">OUR MENU</h3>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa, omnis?</p>
+    </div>
+
+    <div class="menu-card">
+      <img src="menu/COME VISIT US.png" class="menu-img" alt="ไอคอน">
+      <h3 class="menu-title">COME VISIT US</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+   
+  </section>
+</div>
+
+<footer class="credit">
+  <div class="credit-content">
+      <p>© 2025 Thawatchai P. | Bake.Bake</p>
+  </div>
+</footer>
+  <!-- 🔶 Script -->
+  <script src="js/script.js"></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/popupcart.js"></script>
+
+    <!-- วางตรงนี้ไช่ไหมมม -->
+
+</body>
+</html>

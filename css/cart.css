@@ -1,0 +1,236 @@
+
+body {
+  background-color: #eae7b9;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+/* 🔶 Navbar */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+.logo-img {
+  height: 100%;
+  object-fit: contain;
+}
+.menu_page2 {
+  width: 90%;
+  min-width: 850px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.box-menupage2 {
+  border-radius: 12px;
+  width: 100%;
+  min-width: 150px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #b99760;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.box-menupage2:hover {
+  border: solid #856d48;
+}
+
+.text-menu2 {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
+.box-menu:hover {
+  border-color: #856d48;
+}
+/* ทำให้เมื่อ hover ที่ .box-menupage2 ตัวหนังสือใน .text-menu2 เปลี่ยนสี */
+.box-menupage2:hover .text-menu2 {
+  color: #b99760;  /* ✅ สีทอง/น้ำตาลอ่อนที่ใช้ในเว็บ */
+}
+.box-menu:hover .text-menu {
+  color: #b99760;
+}
+/* 🔶 Layout */
+.content-wrapper2 {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* 🔶 Cart Page Styling */
+.cart-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  max-width: 600px;
+  margin: 32px auto;
+  padding: 32px 24px;
+}
+.cart-container h2 {
+  margin-bottom: 24px;
+  color: #b99760;
+  text-align: center;
+}
+.cart-item {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+}
+.cart-item img {
+  width: 80px;
+  border-radius: 8px;
+  margin-right: 16px;
+}
+.cart-item-details {
+  flex: 1;
+}
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.remove-btn {
+  background: #fff0ee;
+  color: #d9534f;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 6px 16px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.remove-btn:hover {
+  background: #d9534f;
+  color: #fff;
+}
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  font-size: 1.2em;
+}
+#checkout-btn {
+  background: #b99760;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#checkout-btn:hover {
+  background: #856d48;
+}
+/* css cart */
+#cart-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #F6BD60;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+  transition: background-color 0.3 ease;
+}
+#cart-float:hover {
+  background-color: #f4a940;
+}
+#cart-count {
+  background-color: white;
+  color: #000000;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+/* Cart Panel */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: -400px; /* ซ่อนออกไปขวา */
+  width: 400px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -6px 0 16px rgba(0, 0, 0, 0.08);
+  transition: right 0.3s ease;
+  z-index: 999;
+  padding: 20px;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+/* เมื่อเปิด cart ให้ขยับเข้ามา */
+.cart-panel.open {
+  right: 0;
+}
+/* ส่วนแสดงรายการสินค้าภายใน cart */
+.cart-body{
+  overflow-y: auto;
+  max-height: calc(100vh - 100px); /* ให้ scroll ได้ */
+}
+
+/* สินค้าแต่ละชิ้น */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+.cart-item img { /* รูปเค้ก */
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.cart-item-details {
+  flex: 1;
+  font-size: 14px;
+}
+.cart-item-details strong {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+/* เป็นช่องของตัวลบ */
+.cart-item-actions button,
+.cart-item-details button {
+  background-color: #b99760;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.cart-item-actions button:hover,
+.cart-item-details button:hover {
+  background-color: #856d48;
+}
+.cart-item-details button {
+  margin: 0 2px;
+}

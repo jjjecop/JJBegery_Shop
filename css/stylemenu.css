@@ -1,0 +1,165 @@
+/* Reset และฟอนต์ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+body {
+  background-color: #eae7b9;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+/* 🔶 Navbar */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+.logo-img {
+  height: 100%;
+  object-fit: contain;
+}
+.menu_page2 {
+  width: 90%;
+  min-width: 850px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.box-menupage2 {
+  border-radius: 12px;
+  width: 100%;
+  min-width: 150px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #b99760;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.box-menupage2:hover {
+  border: solid #856d48;
+}
+
+.text-menu2 {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
+.box-menu:hover {
+  border-color: #856d48;
+}
+/* ทำให้เมื่อ hover ที่ .box-menupage2 ตัวหนังสือใน .text-menu2 เปลี่ยนสี */
+.box-menupage2:hover .text-menu2 {
+  color: #b99760;  /* ✅ สีทอง/น้ำตาลอ่อนที่ใช้ในเว็บ */
+}
+
+.box-menu:hover .text-menu {
+  color: #b99760;
+}
+/* 🔶 Layout */
+.content-wrapper2 {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.body-img {
+    height: auto;
+    margin-top: 20px;
+    background-color: #fff9ef;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+/* ปรับ body-img ให้เป็น grid */
+.body-img {
+  background-color: #fcf8ef; /* ครีมอ่อน หรือ #fef6dc ก็ได้ */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  padding: 40px 56px;
+  justify-items: center;         /* ✅ จัดให้อยู่กลางช่องเสมอ */
+  width: 100%;                   /* ✅ ให้ grid ยืดเต็ม */
+}
+
+/* การใส่ cs ผ่าน card ที่สร้างจาก js */
+.card h3{
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222
+}
+.card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+.card button{
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #b99760;
+  color: white;
+  border: none;
+  border-radius: 6px ;
+  padding: 5px 16px;
+  cursor: pointer;
+}
+.card button:hover{
+  background-color: #856d48;
+}
+.card img{
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 autp 12px;
+  border-radius: 8px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 20px;
+  width: 100%;
+  max-width: 350px;
+  min-height: 0px; /* ✅ ให้สูงพอสำหรับทุกข้อความ */
+  box-sizing: border-box;
+}
+.credit {
+  color: #856d48;             /* สีน้ำตาลทองเข้ากับปุ่ม */
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 50px;
+}
+.credit-content p {
+  margin: 4px 0;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+@media (max-width: 480px) {
+  .body-img {
+    padding: 20px 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}

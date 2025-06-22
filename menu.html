@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Bake.Bake</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/stylemenu.css">
+    <link rel="stylesheet" href="css/popupcart.css">
+    <link rel="stylesheet" href="css/checkmark.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo/3.png" alt="โลโก้ร้าน Cake" class="logo-img" />
+        </div>
+        <div class="content-wrapper2">
+            <ul class="menu_page2">
+                <li class="box-menupage2"><a href="index.html" class="text-menu2">HOME</a></li>
+                <li class="box-menupage2"><a href="menu.html" class="text-menu2">MENU</a></li>
+                <li class="box-menupage2"><a href="about.html" class="text-menu2">ABOUT US</a></li>
+                <li class="box-menupage2"><a href="contact.html" class="text-menu2">CONTACT</a></li>
+                <li class="box-menupage2"><a href="#order" class="text-menu2">ORDER ONLINE</a></li>
+            </ul>
+        </div>
+  </nav>
+     <!-- ตะกร้าร้านค้า -->
+  <div class="cart-countainer">
+    <button id="cart-float" title="Cart">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="cart-count">0</span>
+    </button>
+
+  <!-- Cart Panel -->
+  <div id="cart-panel" class="cart-panel">
+      <div class="cart-header">
+        <span class="cart-title">Cart (<span id="cart-item-count">0</span> items)</span>
+        <button id="close-cart" class="close-btn">×</button>
+      <div class="cart-body">
+        <div id="cart-list"></div> <!-- 🔁 แสดงรายการสินค้า -->
+        <div id="cart-total" style="margin-top: 1rem; font-weight: bold;;"></div> <!-- 🔢 ยอดรวม -->
+      </div>
+    </div>
+  </div>
+  <div class="content-wrapper2">
+    <!-- หน้าแสดงเมนู -->
+        <div class="body-img">
+
+        </div>
+  </div>
+<footer class="credit">
+  <div class="credit-content">
+      <p>© 2025 Thawatchai P. | Bake.Bake</p>
+  </div>
+</footer>
+
+    <!-- 🔶 Script -->
+   <script src="js/jsmenu.js"></script>
+   <script src="js/cart.js" defer></script>
+  <script src="js/popupcart.js"></script>
+
+  
+         <!-- 🔘 Popup ยืนยันเพิ่มสินค้า -->
+  <div id="confirm-popup" class="popup-overlay">
+    <div class="popup-box">
+      <div id="popup-question">
+        <p>ต้องการเพิ่มสินค้าในตะกร้าใช่ไหม?</p>
+        <div class="popup-buttons">
+          <button id="popup-yes">ใช่</button>
+          <button id="popup-no">ไม่ใช่</button>
+        </div>
+      </div>
+      <div id="popup-success" style="display: none;">
+        <svg viewBox="0 0 52 52" class="checkmark">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="#fff"></circle>
+          <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"></path>
+        </svg>
+        <p style="margin-top: 10px; color: green;">เพิ่มสินค้าเรียบร้อยเเล้ว!</p>
+      </div>
+    </div>
+    
+    
+  </div>
+</body>
+</html>

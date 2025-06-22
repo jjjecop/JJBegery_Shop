@@ -1,0 +1,241 @@
+/* Reset และฟอนต์ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+body {
+  background-color: #eae7b9;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+  min-height: 100vh;
+}
+/* 🔶 Navbar */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+}
+.logo-img {
+  height: 100%;
+  object-fit: contain;
+}
+.menu {
+  width: 90%;
+  min-width: 850px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.box-menu {
+  border-radius: 12px;
+  width: 100%;
+  min-width: 150px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid #b99760;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.text-menu {
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
+.box-menu:hover {
+  border-color: #856d48;
+}
+.box-menu:hover .text-menu {
+  color: #b99760;
+}
+.cake-content {
+    width: 60vh;
+}
+/* 🔶 Layout */
+.content-wrapper {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.content-wrapper3 {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.about-content {
+  background-color: #ffffff;
+  margin-top: 20px;
+  height: 50vh;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.body-img {
+  position: relative;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  background-color: #b99760;
+  transition: background-color 0.3s ease;
+}
+/* เค้กหลัก */
+.cake-img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+/* 🔶 Gallery */
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 20px;
+}
+.gallery {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+.gallery-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 180px;
+  height: 140px;
+  border: 5px solid white;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* Highlight item */
+.gallery-item.active {
+  outline: 3px solid #b99760;
+  outline-offset: -3px;
+}
+/* 🔶 Overlay hover */
+.gallery-item .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
+/* ปุ่มใน overlay (ถ้าอยากเพิ่มในอนาคต) */
+.overlay .order-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e67e22;
+  color: white;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.overlay .order-btn:hover {
+  background-color: #d35400;
+}
+/* section-content */
+.menu-card{
+  width: 300px;
+  height: auto;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0 ,0 ,0 , 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15)
+}
+/* menu-img */
+.menu-img{
+  width: 100px;
+  margin-bottom: 0.3rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0.3rem 0 0.5rem 0;
+}
+.menu-desc {
+  font-size: 1rem;
+  color: #444;
+  margin: 0;
+  line-height: 1.5;
+}
+.menu-card h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.5rem 0 0.3rem 0; /* บีบให้ชิดกับ icon มากขึ้น */
+}
+.menus {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+}
+.credit {
+  color: #856d48;             /* สีน้ำตาลทองเข้ากับปุ่ม */
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  margin-top: 50px;
+}
+.credit-content p {
+  margin: 4px 0;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+/* .contact-wrapper {
+  width: 90%;
+  height: 80vh;
+  max-width: 850px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-align: center;
+} */
