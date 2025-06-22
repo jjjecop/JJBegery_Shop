@@ -5,33 +5,154 @@
     stroke-width: 4;
     stroke-miterlimit: 10;
     animation: scaleIn 0.3s ease-in-out forwards;
-  }
-  
-  .checkmark-circle {
+    border-radius: 50%;
+}
+
+.checkmark-circle {
     stroke-dasharray: 157;
     stroke-dashoffset: 157;
     stroke-width: 4;
     stroke: #4CAF50;
     fill: #fff;
     animation: strokeCircle 0.6s forwards;
-  }
-  
-  .checkmark-check {
+}
+
+.checkmark-check {
     transform-origin: 50% 50%;
     stroke-dasharray: 48;
     stroke-dashoffset: 48;
     animation: strokeCheck 0.3s 0.6s forwards ease-in-out;
-  }
-  
-  @keyframes scaleIn {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-  
-  @keyframes strokeCircle {
-    to { stroke-dashoffset: 0; }
-  }
-  
-  @keyframes strokeCheck {
-    to { stroke-dashoffset: 0; }
-  }
+}
+
+@keyframes scaleIn {
+    0% { 
+        transform: scale(0); 
+        opacity: 0; 
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+}
+
+@keyframes strokeCircle {
+    to { 
+        stroke-dashoffset: 0; 
+    }
+}
+
+@keyframes strokeCheck {
+    to { 
+        stroke-dashoffset: 0; 
+    }
+}
+
+/* 🔶 Responsive Design for Checkmark */
+@media (max-width: 1200px) {
+    .checkmark {
+        width: 75px;
+        height: 75px;
+        stroke-width: 3.5;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 3.5;
+    }
+}
+
+@media (max-width: 1024px) {
+    .checkmark {
+        width: 70px;
+        height: 70px;
+        stroke-width: 3.5;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 3.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkmark {
+        width: 65px;
+        height: 65px;
+        stroke-width: 3;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkmark {
+        width: 55px;
+        height: 55px;
+        stroke-width: 3;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 3;
+    }
+}
+
+@media (max-width: 360px) {
+    .checkmark {
+        width: 45px;
+        height: 45px;
+        stroke-width: 2.5;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 2.5;
+    }
+}
+
+/* 🔶 Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .checkmark {
+        width: 50px;
+        height: 50px;
+        stroke-width: 2.5;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 2.5;
+    }
+}
+
+/* 🔶 Large Desktop */
+@media (min-width: 1400px) {
+    .checkmark {
+        width: 90px;
+        height: 90px;
+        stroke-width: 4.5;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 4.5;
+    }
+}
+
+/* 🔶 High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .checkmark {
+        stroke-width: 3;
+    }
+    
+    .checkmark-circle {
+        stroke-width: 3;
+    }
+}
+
+/* 🔶 Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .checkmark,
+    .checkmark-circle,
+    .checkmark-check {
+        animation: none;
+        opacity: 1;
+        transform: scale(1);
+        stroke-dashoffset: 0;
+    }
+}

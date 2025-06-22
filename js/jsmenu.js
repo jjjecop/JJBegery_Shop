@@ -65,3 +65,104 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     });
 });
+
+// ✅ Initialize hamburger menu for menu page
+document.addEventListener("DOMContentLoaded", function() {
+  initHamburgerMenu();
+});
+
+// ✅ ฟังก์ชัน hamburger menu
+function initHamburgerMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('menu');
+  
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      hamburger.classList.toggle('active');
+      menu.classList.toggle('active');
+      
+      // ✅ ป้องกัน scroll ของ body เมื่อ menu เปิด
+      if (menu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+    
+    // ✅ Close menu when clicking on a link
+    const menuLinks = menu.querySelectorAll('.text-menu, .text-menu2');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+    
+    // ✅ Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ✅ Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ✅ Handle window resize
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768 && menu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        menu.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // ✅ Handle orientation change
+    window.addEventListener('orientationchange', function() {
+      setTimeout(() => {
+        if (window.innerWidth > 768 && menu.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          menu.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }, 100);
+    });
+  }
+}
+
+// ✅ ฟังก์ชัน utility สำหรับ responsive
+function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+function isTablet() {
+  return window.innerWidth > 768 && window.innerWidth <= 1024;
+}
+
+function isDesktop() {
+  return window.innerWidth > 1024;
+}
+
+// ✅ ฟังก์ชันสำหรับ responsive touch handling
+function initTouchHandlers() {
+  if (isMobile()) {
+    // เพิ่ม touch event handlers สำหรับ mobile
+    document.addEventListener('touchstart', function() {}, { passive: true });
+    document.addEventListener('touchmove', function() {}, { passive: true });
+  }
+}
+
+// ✅ Initialize responsive features
+document.addEventListener('DOMContentLoaded', function() {
+  initTouchHandlers();
+});

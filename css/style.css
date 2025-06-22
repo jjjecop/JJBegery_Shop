@@ -11,68 +11,25 @@ body {
   line-height: 1.6;
   font-size: 16px;
   min-height: 100vh;
-}
-/* 🔶 Navbar */
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-}
-.logo-img {
-  height: 100%;
-  object-fit: contain;
-}
-.menu {
-  width: 90%;
-  min-width: 850px;
-  margin: 0 auto;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  overflow-x: auto;
-  white-space: nowrap;
-  box-sizing: border-box;
-}
-
-.box-menu {
-  border-radius: 12px;
-  width: 100%;
-  min-width: 150px;
-  height: 40px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid #b99760;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-.text-menu {
-  text-decoration: none;
-  color: #444;
-  transition: color 0.3s ease;
-}
-.box-menu:hover {
-  border-color: #856d48;
-}
-.box-menu:hover .text-menu {
-  color: #b99760;
+  overflow-x: hidden; /* ป้องกัน horizontal scroll */
 }
 .cake-content {
-    width: 60vh;
+  width: 60vh;
+  max-width: 100%;
+  height: auto;
 }
 /* 🔶 Layout */
 .content-wrapper {
   width: 90%;
   max-width: 850px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .content-wrapper3 {
   width: 90%;
   max-width: 850px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .about-content {
   background-color: #ffffff;
@@ -86,7 +43,6 @@ body {
   font-weight: bold;
   color: #222;
 }
-
 .body-img {
   position: relative;
   overflow: hidden;
@@ -96,6 +52,7 @@ body {
   text-align: center;
   background-color: #b99760;
   transition: background-color 0.3s ease;
+  border-radius: 12px;
 }
 /* เค้กหลัก */
 .cake-img {
@@ -118,6 +75,7 @@ body {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
 }
 .gallery::-webkit-scrollbar {
   display: none;
@@ -214,6 +172,8 @@ body {
   gap: 20px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
 }
 .credit {
   color: #856d48;             /* สีน้ำตาลทองเข้ากับปุ่ม */
@@ -227,15 +187,268 @@ body {
   font-weight: 500;
   letter-spacing: 0.2px;
 }
-/* .contact-wrapper {
-  width: 90%;
-  height: 80vh;
-  max-width: 850px;
-  margin: 0 auto;
-  margin-top: 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  text-align: center;
-} */
+/* 🔶 Responsive Design */
+@media (max-width: 1200px) {
+  .content-wrapper,
+  .content-wrapper3 {
+    width: 95%;
+    max-width: 1000px;
+  }
+  
+  .cake-content {
+    width: 50vh;
+  }
+  
+  .gallery-item {
+    width: 160px;
+    height: 120px;
+  }
+  
+  .menu-card {
+    width: 280px;
+  }
+}
+@media (max-width: 1024px) {
+  .cake-content {
+    width: 70vh;
+  }
+  
+  .gallery-item {
+    width: 140px;
+    height: 100px;
+  }
+  
+  .menu-card {
+    width: 250px;
+    padding: 15px 12px;
+  }
+  
+  .menu-img {
+    width: 80px;
+  }
+  
+  .menu-title {
+    font-size: 1.1rem;
+  }
+  
+  .menu-desc {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 768px) {
+  .content-wrapper,
+  .content-wrapper3 {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  .cake-content {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .gallery {
+    gap: 8px;
+  }
+  
+  .gallery-item {
+    width: 120px;
+    height: 90px;
+  }
+  
+  .menus {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .menu-card {
+    width: 100%;
+    max-width: 350px;
+    margin-top: 10px;
+  }
+  
+  .about-content {
+    height: auto;
+    min-height: 300px;
+    padding: 15px;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) {
+  .content-wrapper,
+  .content-wrapper3 {
+    width: 98%;
+    padding: 0 5px;
+  }
+  
+  .cake-content {
+    max-width: 300px;
+  }
+  
+  .gallery-item {
+    width: 100px;
+    height: 75px;
+  }
+  
+  .menu-card {
+    padding: 15px 10px;
+  }
+  
+  .menu-img {
+    width: 70px;
+  }
+  
+  .menu-title {
+    font-size: 1rem;
+  }
+  
+  .menu-desc {
+    font-size: 0.8rem;
+  }
+  
+  .about-content {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .credit {
+    padding: 15px 0;
+    font-size: 0.85rem;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 360px) {
+  .content-wrapper,
+  .content-wrapper3 {
+    width: 100%;
+    padding: 0 2px;
+  }
+  
+  .cake-content {
+    max-width: 250px;
+  }
+  
+  .gallery-item {
+    width: 80px;
+    height: 60px;
+  }
+  
+  .menu-card {
+    padding: 12px 8px;
+  }
+  
+  .menu-img {
+    width: 60px;
+  }
+  
+  .menu-title {
+    font-size: 0.9rem;
+  }
+  
+  .menu-desc {
+    font-size: 0.75rem;
+  }
+  
+  .about-content {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+  
+  .credit {
+    padding: 10px 0;
+    font-size: 0.8rem;
+    margin-top: 20px;
+  }
+}
+/* 🔶 Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .body-img {
+    margin-top: 10px;
+  }
+  
+  .gallery-item {
+    height: 60px;
+  }
+  
+  .menus {
+    padding: 10px 0;
+  }
+  
+  .menu-card {
+    margin-top: 10px;
+  }
+}
+/* 🔶 Large Screens */
+@media (min-width: 1400px) {
+  .content-wrapper,
+  .content-wrapper3 {
+    max-width: 1200px;
+  }
+  
+  .cake-content {
+    width: 70vh;
+  }
+  
+  .gallery-item {
+    width: 200px;
+    height: 160px;
+  }
+  
+  .menu-card {
+    width: 350px;
+    padding: 25px 20px;
+  }
+  
+  .menu-img {
+    width: 120px;
+  }
+  
+  .menu-title {
+    font-size: 1.4rem;
+  }
+  
+  .menu-desc {
+    font-size: 1.1rem;
+  }
+}
+/* 🔶 Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .body-img {
+    margin-top: 15px;
+  }
+  
+  .gallery-item {
+    width: 130px;
+    height: 95px;
+  }
+  
+  .menu-card {
+    width: 280px;
+  }
+}
+/* 🔶 High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo-img,
+  .cake-img,
+  .menu-img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+/* 🔶 Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .box-menu,
+  .gallery-item,
+  .menu-card,
+  .cake-img,
+  .menu-img {
+    transition: none;
+  }
+  
+  .box-menu:hover,
+  .gallery-item:hover,
+  .menu-card:hover {
+    transform: none;
+  }
+}

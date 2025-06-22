@@ -11,69 +11,20 @@ body {
   line-height: 1.6;
   font-size: 16px;
   min-height: 100vh;
-}
-/* 🔶 Navbar */
-.logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
-}
-.logo-img {
-  height: 100%;
-  object-fit: contain;
-}
-.menu_page2 {
-  width: 90%;
-  min-width: 850px;
-  margin: 0 auto;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  gap: 10px;
-  overflow-x: auto;
-  white-space: nowrap;
-  box-sizing: border-box;
-}
-
-.box-menupage2 {
-  border-radius: 12px;
-  width: 100%;
-  min-width: 150px;
-  height: 40px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid #b99760;
-  transition: border-color 0.3s ease, transform 0.3s ease;
-}
-.box-menupage2:hover {
-  border: solid #856d48;
-}
-
-.text-menu2 {
-  text-decoration: none;
-  color: #444;
-  transition: color 0.3s ease;
-}
-.box-menu:hover {
-  border-color: #856d48;
-}
-/* ทำให้เมื่อ hover ที่ .box-menupage2 ตัวหนังสือใน .text-menu2 เปลี่ยนสี */
-.box-menupage2:hover .text-menu2 {
-  color: #b99760;  /* ✅ สีทอง/น้ำตาลอ่อนที่ใช้ในเว็บ */
-}
-
-.box-menu:hover .text-menu {
-  color: #b99760;
+  overflow-x: hidden; /* ป้องกัน horizontal scroll */
 }
 /* 🔶 Layout */
+.content-wrapper {
+  width: 90%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 .content-wrapper2 {
   width: 90%;
   max-width: 850px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 .body-img {
     height: auto;
@@ -86,24 +37,32 @@ body {
 .body-img {
   background-color: #fcf8ef; /* ครีมอ่อน หรือ #fef6dc ก็ได้ */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 50px;
-  padding: 40px 56px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px;
   justify-items: center;         /* ✅ จัดให้อยู่กลางช่องเสมอ */
   width: 100%;                   /* ✅ ให้ grid ยืดเต็ม */
+  border-radius: 12px;
 }
-
 /* การใส่ cs ผ่าน card ที่สร้างจาก js */
 .card h3{
   font-family: 'Prompt', sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #222
+  color: #222;
+  margin-bottom: 10px;
 }
 .card p {
   font-size: 1rem;
   color: #555;
   line-height: 1.6;
+  margin-bottom: 15px;
+}
+.cake-price {
+  font-weight: bold;
+  color: #b99760;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
 }
 .card button{
   font-size: 1rem;
@@ -111,20 +70,26 @@ body {
   background-color: #b99760;
   color: white;
   border: none;
-  border-radius: 6px ;
-  padding: 5px 16px;
+  border-radius: 8px;
+  padding: 12px 24px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
 }
 .card button:hover{
   background-color: #856d48;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(185, 151, 96, 0.3);
 }
 .card img{
   width: 100%;
-  max-width: 100px;
+  max-width: 280px;
   height: auto;
   display: block;
-  margin: 0 autp 12px;
-  border-radius: 8px;
+  margin: 0 auto 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .card {
   display: flex;
@@ -133,13 +98,31 @@ body {
   align-items: center;
   text-align: center;
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  padding: 25px;
   width: 100%;
-  max-width: 350px;
-  min-height: 0px; /* ✅ ให้สูงพอสำหรับทุกข้อความ */
-  box-sizing: border-box;
+  max-width: 320px;
+  min-height: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+/* Animation for cards */
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .credit {
   color: #856d48;             /* สีน้ำตาลทองเข้ากับปุ่ม */
@@ -153,13 +136,216 @@ body {
   font-weight: 500;
   letter-spacing: 0.2px;
 }
-@media (max-width: 480px) {
-  .body-img {
-    padding: 20px 12px;
-    grid-template-columns: 1fr;
+/* 🔶 Responsive Design */
+@media (max-width: 1200px) {
+  .content-wrapper,
+  .content-wrapper2 {
+    width: 95%;
+    max-width: 1000px;
   }
-
+  
+  .body-img {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 30px;
+  }
+  
   .card {
+    max-width: 300px;
+    min-height: 380px;
+  }
+}
+@media (max-width: 1024px) {
+  .body-img {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 25px;
+  }
+  
+  .card {
+    max-width: 280px;
+    min-height: 350px;
+    padding: 20px;
+  }
+  
+  .card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .card img {
+    max-width: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .content-wrapper,
+  .content-wrapper2 {
+    width: 95%;
+    padding: 0 10px;
+  }
+  
+  .body-img {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 20px;
+  }
+  
+  .card img {
     max-width: 100%;
   }
 }
+@media (max-width: 480px) {
+  .content-wrapper,
+  .content-wrapper2 {
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .body-img {
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .card {
+    padding: 15px;
+    border-radius: 12px;
+  }
+  
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+  }
+  
+  .card button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+  
+  .cake-price {
+    font-size: 1rem;
+  }
+  
+  .credit {
+    margin: 30px 10px 0;
+    padding: 15px;
+  }
+}
+@media (max-width: 360px) {
+  .box-menu {
+    width: 160px;
+    height: 40px;
+  }
+  
+  .text-menu {
+    font-size: 0.8rem;
+    padding: 0 12px;
+  }
+  
+  .card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  
+  .card h3 {
+    font-size: 1rem;
+  }
+  
+  .card p {
+    font-size: 0.8rem;
+  }
+  
+  .card button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  
+  .cake-price {
+    font-size: 0.9rem;
+  }
+  
+  .credit {
+    margin: 20px 8px 0;
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+}
+/* 🔶 Landscape Orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+  .body-img {
+    margin-top: 10px;
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .card {
+    padding: 15px;
+    min-height: auto;
+  }
+  
+  .card img {
+    max-width: 200px;
+  }
+}
+/* 🔶 Tablet Portrait */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .body-img {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 30px;
+  }
+  
+  .card {
+    max-width: 100%;
+    min-height: 350px;
+  }
+}
+/* 🔶 Large Desktop */
+@media (min-width: 1400px) {
+  .content-wrapper,
+  .content-wrapper2 {
+    max-width: 1200px;
+  }
+  
+  .body-img {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 50px;
+  }
+  
+  .card {
+    max-width: 380px;
+    min-height: 450px;
+    padding: 30px;
+  }
+  
+  .card h3 {
+    font-size: 1.4rem;
+  }
+  
+  .card img {
+    max-width: 320px;
+  }
+}
+/* 🔶 High DPI Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .card img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+/* 🔶 Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .card button:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(185, 151, 96, 0.3);
+  }
+}
+

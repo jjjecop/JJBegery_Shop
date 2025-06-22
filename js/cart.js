@@ -24,11 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ เมื่อคลิกปุ่มตะกร้า → เปิดแถบ cart ด้านขวา
   cartBtn.addEventListener("click", () => {
     cartPanel.classList.add("open");
+    document.body.classList.add("body-cart-open");
   });
 
   // ✅ เมื่อคลิกปุ่มปิด (×) → ปิดแถบ cart ด้านขวา
   closeBtn.addEventListener("click", () => {
     cartPanel.classList.remove("open");
+    document.body.classList.remove("body-cart-open");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!cartPanel.contains(e.target) && !cartBtn.contains(e.target) && cartPanel.classList.contains("open")) {
+      cartPanel.classList.remove("open");
+      document.body.classList.remove("body-cart-open");
+    }
   });
 
   // ✅ เรียกแสดงรายการสินค้าในตะกร้า
